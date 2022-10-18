@@ -93,8 +93,13 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
-
+        
         for(i in 0..9 step 1)
+        {
+            numButtons.add(findViewById<Button>(numBtnsIDs[i]))
+        }
+
+        for(i in 0..numBtnsIDs.size-1 step 1)
         {
             numButtons[i].setOnClickListener {
                 if(edit1.isFocused == true)
@@ -105,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 else if(edit2.isFocused == true)
                 {
                     num2 = edit2.text.toString() + numButtons[i].getText().toString()
-                    edit2.setText(num1)
+                    edit2.setText(num2)
                 }
                 else
                 {
